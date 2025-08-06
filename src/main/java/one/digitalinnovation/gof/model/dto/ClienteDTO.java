@@ -1,23 +1,10 @@
-package one.digitalinnovation.gof.model;
+package one.digitalinnovation.gof.model.dto;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import one.digitalinnovation.gof.model.Endereco;
 
-@Entity
-public class Cliente {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class ClienteDTO {
     private Long id;
-
-    @NotBlank(message = "Nome é obrigatório")
-    @Size(min = 3, max = 100, message = "Nome deve ter entre 3 e 100 caracteres")
     private String nome;
-
-    @NotNull(message = "Endereço é obrigatório")
-    @ManyToOne
     private Endereco endereco;
 
     // Getters e Setters
